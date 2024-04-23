@@ -13,8 +13,8 @@ function Independiente() {
         e.preventDefault();
         const salarioPorcentaje = salario * 0.40;
 
-        const saludCalculada = salarioPorcentaje * 0.125;
-        const pensionCalculada = salarioPorcentaje * 0.16;
+        const saludCalculada = Math.round(salarioPorcentaje * 0.125);
+        const pensionCalculada = Math.round(salarioPorcentaje * 0.16);
 
         const salarioRestanteCalculada =  salario - (saludCalculada + pensionCalculada);
 

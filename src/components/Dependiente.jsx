@@ -20,15 +20,15 @@ function Dependiente() {
         e.preventDefault();
         const salarioPorcentaje = salario * 0.40;
 
-        const saludCalculada = salarioPorcentaje * 0.125;
-        const saludEmpleado = salarioPorcentaje * 0.04;
-        const saludEmpresa = salarioPorcentaje * 0.085;
+        const saludCalculada = Math.round(salarioPorcentaje * 0.125);
+        const saludEmpleado = Math.round(salarioPorcentaje * 0.04);
+        const saludEmpresa = Math.round(salarioPorcentaje * 0.085);
 
-        const pensionCalculada = salarioPorcentaje * 0.16;
-        const pensionEmpleado = salarioPorcentaje * 0.04;
-        const pensionEmpresa = salarioPorcentaje * 0.12;
+        const pensionCalculada = Math.round(salarioPorcentaje * 0.16);
+        const pensionEmpleado = Math.round(salarioPorcentaje * 0.04);
+        const pensionEmpresa = Math.round(salarioPorcentaje * 0.12);
 
-        const salarioRestanteCalculada =  salario - (pensionEmpleado + saludEmpleado);
+        const salarioRestanteCalculada =  Math.round(salario - (pensionEmpleado + saludEmpleado));
 
         setSalud(saludCalculada);
         setSaludEmple(saludEmpleado);
@@ -44,6 +44,7 @@ function Dependiente() {
         
 
     };
+    
     useEffect(() => {
         document.title = 'Dependiente';
     }, []);

@@ -6,12 +6,11 @@ function Arl() {
   const [cotizacionARL, setCotizacionARL] = useState(0);
 
   const tarifasARL = {
-    I: 0.5,
-    II: 1,
-    III: 2,
-    IV: 4,
-    V: 6,
-    VI: 8
+    I: 0.00522,
+    II: 0.01044,
+    III: 0.02436,
+    IV: 0.0435,
+    V: 0.0696
   };
 
   const nivelRiesgoCambio = (e) => {
@@ -25,7 +24,7 @@ function Arl() {
   const calcularCotizacionARL = () => {
     if (nivelRiesgo && salario) {
       const tarifa = tarifasARL[nivelRiesgo];
-      const cotizacion = (salario * tarifa) / 100;
+      const cotizacion = (salario * tarifa);
       setCotizacionARL(cotizacion);
     } else {
       alert('Por favor ingresa el nivel de riesgo y los ingresos del trabajador.');
@@ -48,8 +47,7 @@ function Arl() {
           <option value="II">II</option>
           <option value="III">III</option>
           <option value="IV">IV</option>
-          <option value="V">V</option>
-          <option value="VI">VI</option>
+          <option value="V">V</option>  
         </select>
       </div>
       <div>

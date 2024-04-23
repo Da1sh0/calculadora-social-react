@@ -1,16 +1,19 @@
 @import url(variables.css);
+
 *{
     font-family: 'Comic Sans MS', cursive;
     margin: 0;
     padding: 0;
     
 }
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
 .fondo-boroso {
     position: absolute;
     top: 0;
@@ -56,6 +59,7 @@ p{
     color: white;
     border: none;
     padding: 10px 20px;
+    margin: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -68,6 +72,7 @@ input{
     padding: 5px;
     margin: 5px;
 }
+
 select {
     margin: 10px;
     background-color: var(--lirio-fondo);
