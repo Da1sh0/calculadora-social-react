@@ -9,8 +9,15 @@ function Vacaciones() {
     setSalario(e.target.value);
   };
 
-  const diasTrabajadosSemestre = (e) => {
-    setDiasTrabajados(e.target.value);
+  const validarNumero = (e) => {
+    const inputValue = e.target.value;
+    if (inputValue < 0 || inputValue > 360) {
+      alert("El número debe estar entre 0 y 360.");
+      // Puedes tomar otras acciones aquí, como establecer el valor a 0 o 360
+      // setDiasTrabajados(inputValue < 0 ? 0 : 360);
+    } else {
+      setDiasTrabajados(inputValue);
+    }
   };
 
   const calcularVacaciones = (e) => {
@@ -18,6 +25,7 @@ function Vacaciones() {
     const vacaciones = (salario * diasTrabajados) / 720;
     setVacaciones(Math.round(vacaciones)); 
   };
+
   useEffect(() => {
     document.title = 'Vacaciones';
   }, []);
@@ -33,7 +41,13 @@ function Vacaciones() {
         </div>
         <div>
           <label>Ingrese los días trabajados: </label>
-          <input type="number" value={diasTrabajados} onChange={diasTrabajadosSemestre} />
+          <input 
+            type="number" 
+            value={diasTrabajados} 
+            onChange={validarNumero} 
+            min="0" 
+            max="360" 
+          />
         </div>
         <button className="boton" onClick={calcularVacaciones}>
           Calcular
